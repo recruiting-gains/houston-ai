@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/api/*", "/functions/*", "/tests/*", "/scripts/*", "/ops/*", "/README.md", "/.gitignore", "/package.json", "/package-lock.json", "/wrangler.toml", "/.dev.vars", "/.dev.vars.example"],
+  "exclude": []
+}

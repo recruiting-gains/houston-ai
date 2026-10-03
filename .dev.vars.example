@@ -1,0 +1,4 @@
+# Copy to .dev.vars for `wrangler pages dev` (never commit .dev.vars).
+REFRESH_SECRET=change-me-to-a-long-random-string
+# Local only: fake the Workers AI binding (it is ignored whenever a real AI binding exists).
+MOCK_AI=1

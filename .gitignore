@@ -1,0 +1,6 @@
+# local secrets / tooling
+.dev.vars
+.wrangler/
+node_modules/
+# screenshots and scratch files stay local
+*.png

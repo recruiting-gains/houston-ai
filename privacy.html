@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy · H-Town AI</title>
+    <meta name="theme-color" content="#070B16">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/theme.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="antialiased">
+    <header class="h-14 border-b border-white/5 bg-night/80">
+        <div class="max-w-3xl mx-auto h-full px-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 focus-ring rounded-lg"><img src="/favicon.svg" alt="" class="w-8 h-8 rounded-lg"><span class="font-display font-bold text-lg text-white">H-Town <span class="sunset-text">AI</span></span></a>
+            <a href="/" class="text-sm text-slate-300 hover:text-white">← Back</a>
+        </div>
+    </header>
+    <main class="max-w-3xl mx-auto px-4 py-10 legal">
+        <h1 class="font-display text-3xl font-bold text-white">Privacy Policy</h1>
+        <p class="text-sm text-slate-400 mt-1">Last updated: October 3, 2026</p>
+        <h2>Short version</h2>
+        <p>No accounts, no ads, no tracking cookies. We keep the minimum needed to run the service and prevent abuse.</p>
+        <h2>What we process</h2>
+        <ul>
+            <li><strong>Your questions.</strong> Sent to an AI model (Cloudflare Workers AI) to generate an answer. We don't store your questions or answers in our database. Don't include personal or sensitive information in questions.</li>
+            <li><strong>Rate-limit counters.</strong> To enforce the daily question limit we store a counter keyed by a one-way SHA-256 hash of your IP address and the date. Counters expire automatically after about 2 days.</li>
+            <li><strong>Standard request logs.</strong> Our hosting provider (Cloudflare) may process technical data such as IP address and user agent for security and reliability, under its own privacy policy.</li>
+        </ul>
+        <h2>What we don't do</h2>
+        <ul>
+            <li>No sign-up, no profile, no selling or sharing of personal data, no advertising trackers.</li>
+            <li>The page loads fonts from Google Fonts and styles from the Tailwind CSS CDN, which receive your IP address when fetching those files.</li>
+        </ul>
+        <h2>Event data</h2>
+        <p>Event listings come from public calendars of Houston venues and organizations. They describe events, not people.</p>
+        <h2>Contact</h2>
+        <p>Privacy questions: <a href="mailto:launchgrid.hq@proton.me">launchgrid.hq@proton.me</a>.</p>
+    </main>
+    <footer class="border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-slate-400 flex flex-col sm:flex-row justify-between gap-2">
+            <p>© 2026 H-Town AI · <a class="link" href="mailto:launchgrid.hq@proton.me">launchgrid.hq@proton.me</a></p>
+            <nav class="flex gap-4"><a class="link" href="/terms">Terms</a><a class="link" href="/privacy">Privacy</a></nav>
+        </div>
+    </footer>
+</body>
+</html>

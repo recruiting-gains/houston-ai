@@ -1,0 +1,24 @@
+# Reference only. This project deploys through Cloudflare Pages *Git integration* and its bindings are
+# configured in the Pages dashboard (Settings -> Functions / Variables).
+#
+# IMPORTANT: there is deliberately NO `pages_build_output_dir` here. With that key, Pages treats this file as
+# the source of truth and the dashboard bindings become read-only/overridden. Without it, Pages ignores the
+# file ("does not contain pages_build_output_dir ... skipping") and uses the dashboard settings.
+# If you ever want config-as-code instead, add `pages_build_output_dir = "."` AND fill in the real KV id below.
+
+name = "houston-ai"
+compatibility_date = "2024-09-23"
+
+# Workers AI (used by /api/ask)
+[ai]
+binding = "AI"
+
+# KV namespace named "houston-ai" (events cache, refresh secret, rate-limit counters)
+[[kv_namespaces]]
+binding = "HTX_KV"
+id = "REPLACE_WITH_houston-ai_KV_NAMESPACE_ID"
+
+[vars]
+# Optional global cap on /api/ask calls per Houston day (protects Workers AI + KV free-tier quotas).
+ASK_DAILY_CAP = "400"
+# REFRESH_SECRET is a *secret*: set it in the dashboard (type: Secret), never here.

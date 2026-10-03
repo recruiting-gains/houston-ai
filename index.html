@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>H-Town AI · Houston events & date ideas</title>
+    <meta name="description" content="Ask H-Town AI what's happening in Houston: events this weekend, free things to do, live music and date night ideas, with links to the real listings.">
+    <meta name="theme-color" content="#070B16">
+    <meta property="og:title" content="H-Town AI · Houston events & date ideas">
+    <meta property="og:description" content="What's good in Houston this week? Ask, and get picks with links to real event listings.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/theme.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="antialiased">
+    <a href="#ask" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-lg focus:bg-night2">Skip to chat</a>
+
+    <header class="sticky top-0 z-20 h-14 border-b border-white/5 bg-night/80 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto h-full px-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 focus-ring rounded-lg" aria-label="H-Town AI home">
+                <img src="/favicon.svg" alt="" class="w-8 h-8 rounded-lg">
+                <span class="font-display font-bold text-lg text-white">H-Town <span class="sunset-text">AI</span></span>
+            </a>
+            <nav class="flex items-center gap-1 text-sm">
+                <a href="#ask" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white focus-ring">Ask</a>
+                <a href="#events" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white focus-ring">Events</a>
+                <span class="hidden sm:inline-flex ml-2 items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-bayou bg-bayou/10 ring-1 ring-bayou/30"><span class="w-1.5 h-1.5 rounded-full bg-bayou"></span>Houston only</span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 pt-10 sm:pt-16 pb-24 sm:pb-32 text-center relative z-10">
+                <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-sunset-light/90 mb-4">
+                    <span class="w-6 h-px bg-sunset-light/60"></span>Your Houston weekend, sorted<span class="w-6 h-px bg-sunset-light/60"></span>
+                </p>
+                <h1 class="font-display text-4xl sm:text-6xl font-bold text-white leading-[1.05]">What's good in <span class="sunset-text whitespace-nowrap">H-Town</span>?</h1>
+                <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl mx-auto">Ask about events this week, free things to do, live music, or date night ideas. Every pick links to a real listing from Houston's public calendars.</p>
+                <p class="mt-3 text-xs text-slate-400" id="data-stamp" aria-live="polite">&nbsp;</p>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 horizon h-40 pointer-events-none" aria-hidden="true"></div>
+            <div class="absolute inset-x-0 bottom-0 pointer-events-none"><svg class="skyline w-full h-28 sm:h-auto block" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 170V105H30V170ZM32 170V115H58V170ZM62 170V103H92V170ZM92 170V107H118V170ZM120 170V102H146V170ZM146 170V112H186V170ZM186 170V131H204V170ZM208 170V104H230V170ZM230 170V133H270V170ZM270 170V138H304V170ZM308 170V143H338V170ZM342 170V102H368V170ZM370 170V139H404V170ZM404 170V103H438V170ZM438 170V141H468V170ZM470 170V123H492V170ZM494 170V110H520V170ZM520 170V142H560V170ZM560 170V136H578V170ZM582 170V108H612V170ZM612 170V121H646V170ZM646 170V114H686V170ZM686 170V133H712V170ZM712 170V113H752V170ZM756 170V132H782V170ZM786 170V124H808V170ZM808 170V101H838V170ZM842 170V102H872V170ZM874 170V142H904V170ZM908 170V131H930V170ZM934 170V137H964V170ZM966 170V112H996V170ZM996 170V144H1014V170ZM1014 170V110H1048V170ZM1048 170V138H1088V170ZM1088 170V128H1122V170ZM1124 170V109H1154V170ZM1154 170V106H1180V170ZM1180 170V109H1202V170ZM330 170V52H334V44H338V36H358V44H362V52H366V170ZM380 170V84L410 74V170ZM420 170V20H464V170ZM470 170V42Q489.0 28 508 42V170ZM515 170V64L522.6666666666666 54L530.3333333333334 64V56L538.0 44L545.6666666666666 56V48L553.3333333333334 34L561 48V170ZM568 170V66L583.0 38L598 66V170ZM605 170V82H639V170ZM645 170V68L671 58V170ZM880 170V30L894.0 2L908 30V170ZM160 170V90Q175.0 76 190 90V170ZM1010 170V80H1014V72H1018V64H1036V72H1040V80H1044V170Z"/><rect class="lit" x="341" y="114" width="2" height="3"/><rect class="lit" x="348" y="150" width="2" height="3"/><rect class="lit" x="405" y="136" width="2" height="3"/><rect class="lit" x="391" y="163" width="2" height="3"/><rect class="lit" x="405" y="163" width="2" height="3"/><rect class="lit" x="445" y="46" width="2" height="3"/><rect class="lit" x="459" y="64" width="2" height="3"/><rect class="lit" x="431" y="91" width="2" height="3"/><rect class="lit" x="452" y="91" width="2" height="3"/><rect class="lit" x="452" y="100" width="2" height="3"/><rect class="lit" x="445" y="109" width="2" height="3"/><rect class="lit" x="424" y="118" width="2" height="3"/><rect class="lit" x="452" y="136" width="2" height="3"/><rect class="lit" x="495" y="59" width="2" height="3"/><rect class="lit" x="502" y="59" width="2" height="3"/><rect class="lit" x="495" y="68" width="2" height="3"/><rect class="lit" x="502" y="77" width="2" height="3"/><rect class="lit" x="474" y="86" width="2" height="3"/><rect class="lit" x="481" y="86" width="2" height="3"/><rect class="lit" x="502" y="113" width="2" height="3"/><rect class="lit" x="495" y="122" width="2" height="3"/><rect class="lit" x="502" y="131" width="2" height="3"/><rect class="lit" x="495" y="149" width="2" height="3"/><rect class="lit" x="526" y="56" width="2" height="3"/><rect class="lit" x="554" y="56" width="2" height="3"/><rect class="lit" x="519" y="74" width="2" height="3"/><rect class="lit" x="547" y="101" width="2" height="3"/><rect class="lit" x="519" y="110" width="2" height="3"/><rect class="lit" x="519" y="128" width="2" height="3"/><rect class="lit" x="533" y="128" width="2" height="3"/><rect class="lit" x="519" y="146" width="2" height="3"/><rect class="lit" x="554" y="146" width="2" height="3"/><rect class="lit" x="572" y="83" width="2" height="3"/><rect class="lit" x="593" y="83" width="2" height="3"/><rect class="lit" x="572" y="92" width="2" height="3"/><rect class="lit" x="593" y="92" width="2" height="3"/><rect class="lit" x="586" y="110" width="2" height="3"/><rect class="lit" x="572" y="137" width="2" height="3"/><rect class="lit" x="593" y="146" width="2" height="3"/><rect class="lit" x="630" y="99" width="2" height="3"/><rect class="lit" x="609" y="135" width="2" height="3"/><rect class="lit" x="616" y="135" width="2" height="3"/><rect class="lit" x="616" y="144" width="2" height="3"/><rect class="lit" x="616" y="162" width="2" height="3"/><rect class="lit" x="663" y="93" width="2" height="3"/><rect class="lit" x="663" y="102" width="2" height="3"/><rect class="lit" x="663" y="129" width="2" height="3"/><rect class="lit" x="663" y="138" width="2" height="3"/><rect class="lit" x="898" y="65" width="2" height="3"/><rect class="lit" x="898" y="74" width="2" height="3"/><rect class="lit" x="891" y="83" width="2" height="3"/><rect class="lit" x="884" y="137" width="2" height="3"/><rect class="lit" x="898" y="146" width="2" height="3"/><rect class="lit" x="171" y="98" width="2" height="3"/><rect class="lit" x="185" y="98" width="2" height="3"/><rect class="lit" x="185" y="116" width="2" height="3"/><rect class="lit" x="171" y="134" width="2" height="3"/><rect class="lit" x="185" y="134" width="2" height="3"/><rect class="lit" x="164" y="143" width="2" height="3"/><rect class="lit" x="1021" y="124" width="2" height="3"/></svg></div>
+        </section>
+
+        <section id="ask" class="relative z-10 -mt-14 sm:-mt-20 scroll-mt-20">
+            <div class="max-w-3xl mx-auto px-3 sm:px-4">
+                <div class="panel glow rounded-2xl overflow-hidden">
+                    <div id="messages" class="px-3 sm:px-5 pt-5 pb-3 space-y-4 max-h-[60vh] overflow-y-auto" role="log" aria-live="polite" aria-label="Conversation">
+                        <div id="empty-state" class="text-center py-4">
+                            <p class="text-slate-200 font-medium">Try one of these, or ask your own:</p>
+                        </div>
+                    </div>
+                    <div class="px-3 sm:px-5 pb-3">
+                        <div id="chips" class="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1" role="group" aria-label="Quick prompts">
+                            <button type="button" class="chip px-3.5 py-2 text-sm" data-q="What's happening in Houston this weekend?">🗓️ This weekend</button>
+                            <button type="button" class="chip px-3.5 py-2 text-sm" data-q="What free stuff can I do in Houston this week?">🆓 Free stuff</button>
+                            <button type="button" class="chip px-3.5 py-2 text-sm" data-q="Give me date night ideas under $50 in Houston.">💘 Date night under $50</button>
+                            <button type="button" class="chip px-3.5 py-2 text-sm" data-q="Any live music in Houston tonight?">🎶 Live music tonight</button>
+                            <button type="button" class="chip px-3.5 py-2 text-sm" data-q="Kid-friendly things to do in Houston this weekend?">🧒 Kid-friendly</button>
+                            <button type="button" class="chip px-3.5 py-2 text-sm" data-q="Outdoorsy things to do in Houston parks this week?">🌳 Outdoors</button>
+                        </div>
+                    </div>
+                    <form id="ask-form" class="border-t border-white/5 p-3 sm:p-4 flex items-end gap-2" autocomplete="off">
+                        <label for="question" class="sr-only">Ask about Houston events</label>
+                        <textarea id="question" rows="1" maxlength="500" required class="field flex-1 px-4 py-3 text-[16px] resize-none max-h-40" placeholder="Ask about Houston events…"></textarea>
+                        <button id="send" type="submit" class="btn-sunset h-12 px-4 sm:px-5 flex items-center gap-2 shrink-0" aria-label="Send question">
+                            <span class="hidden sm:inline">Ask</span>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </button>
+                    </form>
+                    <p class="px-4 pb-3 -mt-1 text-[11px] text-slate-500 flex justify-between gap-2">
+                        <span>AI picks from public listings. Always confirm details on the event page.</span>
+                        <span id="remaining" class="shrink-0"></span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="max-w-5xl mx-auto px-3 sm:px-4 pt-14 pb-10 scroll-mt-16">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-4">
+                <div>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white">Upcoming events</h2>
+                    <p class="text-sm text-slate-400 mt-1">Next 30 days from <span id="source-count">Houston</span> public calendars.</p>
+                </div>
+                <div class="flex gap-2">
+                    <label for="search" class="sr-only">Search events</label>
+                    <input id="search" type="search" class="field px-3 py-2 text-sm w-full sm:w-56" placeholder="Search events…">
+                    <label for="area" class="sr-only">Filter by area</label>
+                    <select id="area" class="field px-2 py-2 text-sm max-w-[10rem]"><option value="">All areas</option></select>
+                </div>
+            </div>
+            <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-2" role="group" aria-label="When">
+                <button type="button" class="pill px-3.5 py-1.5 text-sm" data-when="" aria-pressed="true">All</button>
+                <button type="button" class="pill px-3.5 py-1.5 text-sm" data-when="today" aria-pressed="false">Today</button>
+                <button type="button" class="pill px-3.5 py-1.5 text-sm" data-when="tomorrow" aria-pressed="false">Tomorrow</button>
+                <button type="button" class="pill px-3.5 py-1.5 text-sm" data-when="weekend" aria-pressed="false">This weekend</button>
+                <button type="button" class="pill px-3.5 py-1.5 text-sm" data-when="week" aria-pressed="false">Next 7 days</button>
+                <button type="button" class="pill px-3.5 py-1.5 text-sm" data-free="1" aria-pressed="false">Free only</button>
+            </div>
+            <div id="event-list" class="space-y-6" aria-live="polite"></div>
+            <div class="text-center mt-6"><button id="more" type="button" class="pill px-5 py-2 text-sm hidden">Show more</button></div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/5 mt-6">
+        <div class="max-w-5xl mx-auto px-4 py-8 text-sm text-slate-400 space-y-4">
+            <p><span class="text-slate-300 font-medium">Data sources:</span> <span id="source-links">Houston Public Library, Visit Houston, Hermann Park Conservancy, Buffalo Bayou Partnership and more.</span> Listings belong to their publishers; H-Town AI is not affiliated with them or with the City of Houston.</p>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <p>© <span id="year">2026</span> H-Town AI · Contact <a class="link" href="mailto:launchgrid.hq@proton.me">launchgrid.hq@proton.me</a></p>
+                <nav class="flex gap-4"><a class="link" href="/terms">Terms</a><a class="link" href="/privacy">Privacy</a></nav>
+            </div>
+        </div>
+    </footer>
+    <script src="/app.js" defer></script>
+</body>
+</html>

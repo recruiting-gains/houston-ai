@@ -1,0 +1,26 @@
+# Scheduled refresh via GitHub Actions (optional).
+# To enable: copy this file to .github/workflows/refresh.yml (needs a token with the `workflow` scope, or add it
+# in the GitHub web UI), then add two repository secrets:
+#   HTX_URL             e.g. https://houston-ai.pages.dev   (no trailing slash)
+#   HTX_REFRESH_SECRET  the same value as the Pages REFRESH_SECRET
+# It refreshes one source per request so each Pages Function invocation stays small (Workers Free CPU limits).
+name: Refresh Houston events
+on:
+  schedule:
+    - cron: '17 10,22 * * *' # ~5am and ~5pm Houston time
+  workflow_dispatch: {}
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh each source
+        env:
+          HTX_URL: ${{ secrets.HTX_URL }}
+          KEY: ${{ secrets.HTX_REFRESH_SECRET }}
+        run: |
+          if [ -z "$HTX_URL" ] || [ -z "$KEY" ]; then echo "Secrets not set; skipping."; exit 0; fi
+          for s in hpl visithouston hermannpark buffalobayou levypark memorialpark arboretum camh hmh heights midtown spacecenter uh rice; do
+            code=$(curl -s -o /tmp/out.json -w '%{http_code}' -H "X-Refresh-Key: $KEY" "$HTX_URL/api/refresh?source=$s")
+            echo "$s -> $code $(head -c 300 /tmp/out.json)"
+            sleep 2
+          done

@@ -1,0 +1,12 @@
+{
+  "name": "houston-ai",
+  "private": true,
+  "type": "module",
+  "description": "H-Town AI: Houston-only events + date ideas assistant (Cloudflare Pages + Functions + Workers AI + KV)",
+  "scripts": {
+    "test": "node --test tests/",
+    "seed": "node scripts/build-seed.mjs",
+    "dev": "npx wrangler@3 pages dev . --kv HTX_KV --port 8788"
+  },
+  "engines": { "node": ">=20" }
+}
